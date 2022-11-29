@@ -9,12 +9,12 @@ print("Empty locations: o; Missed attempts: x; Hits: *")
 print("Grid size is 5 x 5, choose integers between 1 and 5")
 print('-' * 65)
 
+player_name = input("Please enter your name: \n")
+print('-' * 45)
+
 player = []
 computer = []
 player_attempts = []
-
-player_name = input("Please enter your name: \n")
-print('-' * 45)
 
 def make_grid(grid):
     """
@@ -60,9 +60,29 @@ def player_attempt():
     choose_col = int(input("For a column choose a number and press enter: \n"))
     if computer[choose_row][choose_col] == " @ ":
         player_attempts[choose_row][choose_col] = " * "
+        print("\nWow...! You hit the ship :)\n")
     else:
         player_attempts[choose_row][choose_col] = " x "
-    print_grid(player_attempts)   
+        print("\nOh...! You missed the ship :(\n")
+    print_grid(player_attempts)
+
+def computer_attempt():
+    """
+    Computer attempts at player's grid using randomly generated co-ordinates.
+    """
+     # To generate the random numbers
+    print("It's the computer's turn to choose!")
+    choose_row = random_number(computer)
+    choose_col = random_number(computer)
+    print(f"\nComputer chose: ({choose_row}, {choose_col})")
+    if player[choose_row][choose_col] == " @ ":
+        player[choose_row][choose_col] = " * "
+        print("\nOh...! Computer hit the ship :(")
+    else:
+        player[choose_row][choose_col] = " x "
+        print("\nWow...! Computer missed the ship :)") 
+    print("Player's grid:")
+    print_grid(player)
 
 def play_game():
     """
@@ -76,3 +96,4 @@ def play_game():
 
 play_game()
 player_attempt()
+computer_attempt()
