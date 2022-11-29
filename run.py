@@ -1,6 +1,20 @@
 from random import randint
 
-grid = []
+# Welcome message to start the game
+print('-' * 65)
+print("Welcome to play the Battleships Game with computer!")
+print("You will have to find 5 battleships within the computer's grid.")
+print("Battleships will be auto generated.")
+print("Empty locations: o; Missed attempts: x; Hits: *")
+print("Grid size is 5 x 5, choose integers between 1 and 5")
+print('-' * 65)
+
+player = []
+computer = []
+player_attempts = []
+
+player_name = input("Please enter your name: \n")
+print('-' * 45)
 
 def make_grid(grid):
     """
@@ -36,12 +50,29 @@ def create_ship_location(grid):
         grid[ship_row][ship_col] = " @ "
         ind += 1
 
+def player_attempt():
+    """
+    Player attempts on computer's grid by giving player's input.
+    """
+    print("\nChoose a row to hit the ship.")
+    choose_row = int(input("For a row choose a number and press enter: \n"))
+    print("\nChoose a column to hit the ship.")
+    choose_col = int(input("For a column choose a number and press enter: \n"))
+    if computer[choose_row][choose_col] == " @ ":
+        player_attempts[choose_row][choose_col] = " * "
+    else:
+        player_attempts[choose_row][choose_col] = " x "
+    print_grid(player_attempts)   
+
 def play_game():
     """
     The main function calling the other functions.
     """
-    make_grid(grid)
-    create_ship_location(grid)
-    print_grid(grid)
+    make_grid(player)
+    make_grid(computer)
+    make_grid(player_attempts)
+    create_ship_location(player)
+    create_ship_location(computer)
 
 play_game()
+player_attempt()
