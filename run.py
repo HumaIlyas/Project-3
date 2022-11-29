@@ -26,13 +26,22 @@ def random_number(grid):
     return randint(0, len(grid)-1)
 
 def create_ship_location(grid):
-    ship_row = random_number(grid)
-    ship_col = random_number(grid)
-    print(ship_col, ship_row)
+    """
+    Create locations for battleships by using random co-ordinates.
+    Update the grid with " @ " to indicate the location of the ships for the player's attempt to hit them.
+    """
+    for ind in range(0, 5):
+        ship_row = random_number(grid)
+        ship_col = random_number(grid)
+        grid[ship_row][ship_col] = " @ "
+        ind += 1
 
 def play_game():
+    """
+    The main function calling the other functions.
+    """
     make_grid(grid)
-    print_grid(grid)
     create_ship_location(grid)
+    print_grid(grid)
 
 play_game()
