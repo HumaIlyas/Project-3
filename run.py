@@ -132,13 +132,23 @@ def computer_attempt():
     # To generate the random numbers
     choose_row = random_number(computer)
     choose_col = random_number(computer)
-    print(f"\nComputer chose: ({choose_row}, {choose_col})")
+    print(f"\nComputer chose: ({choose_row + 1}, {choose_col + 1})")
     if player[choose_row][choose_col] == " @ ":
         player[choose_row][choose_col] = " * "
         print("\nOh...! Computer hit the ship :(")
     else:
         player[choose_row][choose_col] = " x "
         print("\nWow...! Computer missed the ship :)") 
+
+def attempt_winner(grid):
+    """
+    To sum up the number of times " * " (hit battleships) appear in the grid. 
+    If " * " equal to 5 on plyer or computer grid, either player or computer won the game.
+    """
+    total = 0
+    for list in grid:
+        total += list.count(" * ")
+    return total
 
 def play_game():
     """
@@ -160,5 +170,10 @@ def play_game():
         print('-' * 45)
         input("Press enter for your's attempt...")
         i += 1
+        if attempt_winner(player) == 5:
+            i = 10
+        elif attempt_winner(player_attempts) == 5:
+            i = 10
+    print("\nGAME IS OVER!")
 
 play_game()
