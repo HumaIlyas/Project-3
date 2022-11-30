@@ -44,12 +44,20 @@ def create_ship_location(grid):
     """
     Create locations for battleships by using random co-ordinates.
     Update the grid with " @ " to indicate the location of the ships for the player's attempt to hit them.
+    There are 5 ships on the grid. 
+    while loop is to ensure that there are 5 ships on the grid.
+    variable ship_point is to check if the points are less than 5, it loops again. 
     """
-    for ind in range(0, 5):
+    ship_point = 0
+    while ship_point < 5:
+        ship_point = 0
         ship_row = random_number(grid)
         ship_col = random_number(grid)
         grid[ship_row][ship_col] = " @ "
-        ind += 1
+        
+        # for total count of ship_point, look in each list of the grid, and count @
+        for row in grid:
+            ship_point += row.count(" @ ")
 
 def create_grids():
     """
