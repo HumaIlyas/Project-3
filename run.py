@@ -158,9 +158,23 @@ def attempt_winner(grid):
         total += list.count(" * ")
     return total
 
+def final_winner():
+    """
+    To find the final winner after twenty attempts.
+    To display the final reuslt and message to the player.
+    """
+    player_result = attempt_winner(player_attempts)
+    computer_result = attempt_winner(player)
+    if player_result > computer_result:
+        print("\nCongratulations! you have WON the game :)")
+    elif player_result < computer_result:
+        print("\nSorry! Computer has WON the game :(")
+    else:
+        print("\nGame is draw!")
+
 def play_game():
     """
-    The main function calling the other functions.
+    The main loop for the attempts of the player and the computer.
     """
     create_grids()
     global player_name
@@ -182,6 +196,7 @@ def play_game():
             i = 10
         elif attempt_winner(player_attempts) == 5:
             i = 10
+    final_winner()
     print("\nGAME IS OVER!")
 
 play_game()
