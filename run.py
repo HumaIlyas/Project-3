@@ -198,7 +198,8 @@ def play_game():
     global computer_score
     i = 0
     while i < 10:
-        print(f"\n{player_name} this is the attempt {i + 1}/10")
+        print(f"{player_name} this is the attempt {i + 1}/10")
+        input("\nPress enter for your's attempt...")
         player_attempt()
         print_grid(player_attempts)
         print('-' * 45)
@@ -211,7 +212,6 @@ def play_game():
         print(f"{player_name} after the attempt {i + 1}/10 scores are:")
         print(f"{player_name}'s score: {player_score}; Computer's score: {computer_score}")
         print('-' * 45)
-        input("Press enter for your's attempt...")
         i += 1
         if attempt_winner(player) == 5:
             i = 10
