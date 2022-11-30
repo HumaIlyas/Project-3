@@ -219,5 +219,9 @@ def play_game():
             i = 10
     final_winner()
     print("\nGAME IS OVER!")
+    print("\nClick on the button RUN PROGRAM to continue playing the game...")
+    input("\nPress enter to QUIT the game...")
+    quit()
 
+# To call the main function
 play_game()
