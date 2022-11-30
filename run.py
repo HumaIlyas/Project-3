@@ -10,6 +10,8 @@ print("Grid size is 5 x 5, choose integers between 1 and 5")
 print('-' * 65)
 
 # global variables
+player_score = 0
+computer_score = 0
 player_name = input("Please enter your name: \n")
 print('-' * 45)
 
@@ -94,7 +96,7 @@ def player_attempt():
     """
     Player attempts on computer's grid by giving player's input.
     To check whether it is valid data or an already chosen number.
-    To check whether the player hit a battleship.
+    To check whether the player hit a battleship and show the result of that attempt.
     """
     global player_name
     print("\nComputer's grid:\n")
@@ -125,10 +127,12 @@ def player_attempt():
             print('-' * 45)
         else:
             repeat = False
-
+    # To check if the attempt is a hit or not and show the result.
+    global player_score
     if computer[choose_row][choose_col] == " @ ":
         player_attempts[choose_row][choose_col] = " * "
         print("\nWow...! You hit the ship :)\n")
+        player_score += 1
     else:
         player_attempts[choose_row][choose_col] = " x "
         print("\nOh...! You missed the ship :(\n")
@@ -149,11 +153,13 @@ def computer_attempt():
             choose_col = random_number(computer)
         else:
             repeat = False
-    # To show the player about the computer choice       
+    # To show the player about the computer choice and result   
     print(f"\nComputer chose: ({choose_row + 1}, {choose_col + 1})")
+    global computer_score
     if player[choose_row][choose_col] == " @ ":
         player[choose_row][choose_col] = " * "
         print("\nOh...! Computer hit the ship :(")
+        computer_score += 1
     else:
         player[choose_row][choose_col] = " x "
         print("\nWow...! Computer missed the ship :)") 
@@ -188,6 +194,8 @@ def play_game():
     """
     create_grids()
     global player_name
+    global player_score
+    global computer_score
     i = 0
     while i < 10:
         print(f"\n{player_name} this is the attempt {i + 1}/10")
@@ -199,6 +207,9 @@ def play_game():
         computer_attempt()
         print(f"\n{player_name}'s grid:\n")
         print_grid(player)
+        print('-' * 45)
+        print(f"{player_name} after the attempt {i + 1}/10 scores are:")
+        print(f"{player_name}'s score: {player_score}; Computer's score: {computer_score}")
         print('-' * 45)
         input("Press enter for your's attempt...")
         i += 1
