@@ -137,9 +137,19 @@ def computer_attempt():
     """
     Computer attempts at player's grid using randomly generated co-ordinates.
     """
+    repeat = True
     # To generate the random numbers
     choose_row = random_number(computer)
     choose_col = random_number(computer)
+    # To check if the data is valid
+    while repeat:
+        if (player[choose_row][choose_col] == " x " or 
+                player[choose_row][choose_col] == " * "):
+            choose_row = random_number(computer)
+            choose_col = random_number(computer)
+        else:
+            repeat = False
+    # To show the player about the computer choice       
     print(f"\nComputer chose: ({choose_row + 1}, {choose_col + 1})")
     if player[choose_row][choose_col] == " @ ":
         player[choose_row][choose_col] = " * "
