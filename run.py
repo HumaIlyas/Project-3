@@ -176,7 +176,7 @@ def attempt_winner(grid):
 
 def final_winner():
     """
-    To find the final winner after twenty attempts.
+    To find the final winner after ten attempts.
     To display the final reuslt and message to the player.
     """
     player_result = attempt_winner(player_attempts)
