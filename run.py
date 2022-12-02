@@ -1,19 +1,21 @@
 from random import randint
 
 # Welcome message to start the game
-print('-' * 65)
-print("Welcome to play the Battleships Game with computer!")
-print("You will have to find 5 battleships within the computer's grid.")
-print("Battleships will be auto generated.")
-print("Empty locations: o; Missed attempts: x; Hits: *")
-print("Grid size is 5 x 5, choose integers between 1 and 5")
-print('-' * 65)
+print('-' * 35)
+print("Welcome to play Battleships Game!")
+print("Grid size: 5 x 5")
+print("Number of battleships: 5")
+print("Battleships: auto generated")
+print("Empty locations: o")
+print("Missed attempts: x")
+print("Hits: *")
+print('-' * 35)
 
 # global variables
 player_score = 0
 computer_score = 0
-player_name = input("Please enter your name: \n")
-print('-' * 45)
+player_name = input("Please ENTER your name: \n")
+print('-' * 35)
 
 player = []
 computer = []
@@ -85,10 +87,10 @@ def validate_coordinates(value):
                 "Your attempt is off-grid!"
             )
     except ValueError as e:
-        print('-' * 45)
+        print('-' * 35)
         print(f"{e}")
-        print("Enter an integer between 1 and 5")
-        print('-' * 45)
+        print("ENTER an integer between 1 and 5")
+        print('-' * 35)
         return False
     return True
 
@@ -106,12 +108,12 @@ def player_attempt():
         # To check if the input data is valid
         while True:
             print("\nChoose a row to hit the ship.")
-            choose_row = input("For a row choose a number and press enter: \n")
+            choose_row = input("Choose a number and press ENTER: \n")
             if validate_coordinates(choose_row):
                 break
         while True:
             print("\nChoose a column to hit the ship.")
-            choose_col = input("For a column choose a number and press enter: \n")
+            choose_col = input("Choose a number and press ENTER: \n")
             if validate_coordinates(choose_col):
                 break
         print(f"\n{player_name} chose: ({int(choose_row)}, {int(choose_col)})")
@@ -121,10 +123,10 @@ def player_attempt():
         # To check if the data is valid.
         if (player_attempts[choose_row][choose_col] == " x " or 
                 player_attempts[choose_row][choose_col] == " * "):
-            print('-' * 45)
-            print("You have chosen the same coordinates before.")
+            print('-' * 35)
+            print("You chose same coordinates before.")
             print("please choose another number!")
-            print('-' * 45)
+            print('-' * 35)
         else:
             repeat = False
     # To check if the attempt is a hit or not and show the result.
@@ -182,9 +184,9 @@ def final_winner():
     player_result = attempt_winner(player_attempts)
     computer_result = attempt_winner(player)
     if player_result > computer_result:
-        print("\nCongratulations! you have WON the game :)")
+        print("\nCongratulations! you WON :)")
     elif player_result < computer_result:
-        print("\nSorry! Computer has WON the game :(")
+        print("\nSorry! Computer WON :(")
     else:
         print("\nGame is draw!")
 
@@ -199,19 +201,18 @@ def play_game():
     i = 0
     while i < 10:
         print(f"{player_name} this is the attempt {i + 1}/10")
-        input("\nPress enter for your's attempt...")
+        input("\nPress ENTER for your's attempt.")
         player_attempt()
         print_grid(player_attempts)
-        print('-' * 45)
-        print("Computer's attempt to choose the number!")
-        input("Press enter to see the computer's attempt...")
+        print('-' * 35)
+        input("Press ENTER for computer's attempt.")
         computer_attempt()
         print(f"\n{player_name}'s grid:\n")
         print_grid(player)
-        print('-' * 45)
-        print(f"{player_name} after the attempt {i + 1}/10 scores are:")
-        print(f"{player_name}'s score: {player_score}; Computer's score: {computer_score}")
-        print('-' * 45)
+        print('-' * 35)
+        print(f"{player_name} after this attempt scores are:")
+        print(f"{player_name}: {player_score}; Computer: {computer_score}")
+        print('-' * 35)
         i += 1
         if attempt_winner(player) == 5:
             i = 10
@@ -219,8 +220,10 @@ def play_game():
             i = 10
     final_winner()
     print("\nGAME IS OVER!")
-    print("\nClick on the button RUN PROGRAM to continue playing the game...")
-    input("\nPress enter to QUIT the game...")
+    print("\nContinue playing the game...")
+    print("Click on the button RUN PROGRAM")
+    print("\nQUIT the game...")
+    input("Press ENTER")
     quit()
 
 # To call the main function
