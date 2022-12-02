@@ -4,6 +4,7 @@ from random import randint
 print('-' * 35)
 print("Welcome to play Battleships Game!")
 print("Grid size: 5 x 5")
+print("Choose integers between 1 and 5")
 print("Number of battleships: 5")
 print("Battleships: auto generated")
 print("Empty locations: o")
