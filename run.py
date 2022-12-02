@@ -120,7 +120,7 @@ def player_attempt():
             choose_col = input(Fore.GREEN + "Choose a number and press ENTER: \n" + Fore.WHITE)
             if validate_coordinates(choose_col):
                 break
-        print(f"\n{Fore.YELLOW + player_name}" + Fore.CYAN + " " + "chose:" + Fore.WHITE + " " + f"({int(choose_row)}, {int(choose_col)})")
+        print(f"\n{Fore.YELLOW + player_name} " + Fore.CYAN + "chose: " + Fore.WHITE + f"({int(choose_row)}, {int(choose_col)})")
         # minus 1 is included in the argument because the players enter a number between 1 and 5.
         choose_row = int(choose_row)-1
         choose_col = int(choose_col)-1
@@ -160,7 +160,7 @@ def computer_attempt():
         else:
             repeat = False
     # To show the player about the computer choice and result   
-    print(Fore.BLUE + "\nComputer" + " " + Fore.CYAN + "chose:" + " " + Fore.WHITE + f"({choose_row + 1}, {choose_col + 1})")
+    print(Fore.BLUE + "\nComputer " + Fore.CYAN + "chose: " + Fore.WHITE + f"({choose_row + 1}, {choose_col + 1})")
     global computer_score
     if player[choose_row][choose_col] == " @ ":
         player[choose_row][choose_col] = " * "
@@ -204,7 +204,7 @@ def play_game():
     global computer_score
     i = 0
     while i < 10:
-        print(f"{Fore.YELLOW + player_name}" + " " + Fore.CYAN + "this is the attempt" + " " + Fore.WHITE + f"{i + 1}/10")
+        print(f"{Fore.YELLOW + player_name} " + Fore.CYAN + "this is the attempt " + Fore.WHITE + f"{i + 1}/10")
         input(Fore.WHITE + "\nPress ENTER for your's attempt.")
         player_attempt()
         print_grid(player_attempts)
@@ -214,8 +214,8 @@ def play_game():
         print(f"\n{Fore.YELLOW + player_name}'s grid:\n")
         print_grid(player)
         print(Fore.WHITE + '-' * 35)
-        print(f"{Fore.YELLOW + player_name}" + " " + Fore.WHITE + "after this attempt scores are:")
-        print(f"{Fore.YELLOW + player_name}:" + " " + Fore.WHITE + f"{player_score};" + " " + Fore.BLUE + "Computer:" + " " + Fore.WHITE + f"{computer_score}")
+        print(f"{Fore.YELLOW + player_name} " + Fore.WHITE + "after this attempt scores are:")
+        print(f"{Fore.YELLOW + player_name}: " + Fore.WHITE + f"{player_score}; " + Fore.BLUE + "Computer: " + Fore.WHITE + f"{computer_score}")
         print(Fore.WHITE + '-' * 35)
         i += 1
         if attempt_winner(player) == 5:
@@ -225,9 +225,9 @@ def play_game():
     final_winner()
     print(Fore.WHITE + "\nGAME IS OVER!")
     print(Fore.GREEN + "\nContinue playing the game...")
-    print(Fore.WHITE + "Click on the button" + " " + Fore.BLUE + "RUN PROGRAM")
+    print(Fore.WHITE + "Click on the button " + Fore.BLUE + "RUN PROGRAM")
     print(Fore.RED + "\nQUIT the game...")
-    input(Fore.WHITE + "Press" + " " + Fore.BLUE + "ENTER")
+    input(Fore.WHITE + "Press " + Fore.BLUE + "ENTER")
     quit()
 
 # To call the main function
