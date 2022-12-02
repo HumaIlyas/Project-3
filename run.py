@@ -18,7 +18,7 @@ print(Fore.WHITE + '-' * 35)
 # global variables
 player_score = 0
 computer_score = 0
-player_name = input(Fore.CYAN + "Please ENTER your name: \n" + Fore.MAGENTA)
+player_name = input(Fore.CYAN + "Please ENTER your name: \n" + Fore.YELLOW)
 print(Fore.WHITE + '-' * 35)
 
 player = []
@@ -112,15 +112,15 @@ def player_attempt():
         # To check if the input data is valid
         while True:
             print(Fore.GREEN + "\nChoose a row to hit the ship.")
-            choose_row = input(Fore.GREEN + "Choose a number and press ENTER: \n" + Fore.YELLOW)
+            choose_row = input(Fore.GREEN + "Choose a number and press ENTER: \n" + Fore.WHITE)
             if validate_coordinates(choose_row):
                 break
         while True:
             print(Fore.GREEN + "\nChoose a column to hit the ship.")
-            choose_col = input(Fore.GREEN + "Choose a number and press ENTER: \n" + Fore.YELLOW)
+            choose_col = input(Fore.GREEN + "Choose a number and press ENTER: \n" + Fore.WHITE)
             if validate_coordinates(choose_col):
                 break
-        print(f"\n{Fore.MAGENTA + player_name}" + Fore.CYAN + " " + "chose:" + Fore.YELLOW + " " + f"({int(choose_row)}, {int(choose_col)})")
+        print(f"\n{Fore.YELLOW + player_name}" + Fore.CYAN + " " + "chose:" + Fore.WHITE + " " + f"({int(choose_row)}, {int(choose_col)})")
         # minus 1 is included in the argument because the players enter a number between 1 and 5.
         choose_row = int(choose_row)-1
         choose_col = int(choose_col)-1
@@ -160,7 +160,7 @@ def computer_attempt():
         else:
             repeat = False
     # To show the player about the computer choice and result   
-    print(Fore.BLUE + "\nComputer" + Fore.CYAN + " " + "chose:" + Fore.YELLOW + " " + f"({choose_row + 1}, {choose_col + 1})")
+    print(Fore.BLUE + "\nComputer" + " " + Fore.CYAN + "chose:" + " " + Fore.WHITE + f"({choose_row + 1}, {choose_col + 1})")
     global computer_score
     if player[choose_row][choose_col] == " @ ":
         player[choose_row][choose_col] = " * "
@@ -204,18 +204,18 @@ def play_game():
     global computer_score
     i = 0
     while i < 10:
-        print(f"{Fore.MAGENTA + player_name}" + Fore.CYAN + " " + f"this is the attempt {i + 1}/10")
+        print(f"{Fore.YELLOW + player_name}" + " " + Fore.CYAN + "this is the attempt" + " " + Fore.WHITE + f"{i + 1}/10")
         input(Fore.WHITE + "\nPress ENTER for your's attempt.")
         player_attempt()
         print_grid(player_attempts)
         print(Fore.WHITE + '-' * 35)
         input(Fore.WHITE + "Press ENTER for computer's attempt.")
         computer_attempt()
-        print(f"\n{Fore.MAGENTA + player_name}'s grid:\n")
+        print(f"\n{Fore.YELLOW + player_name}'s grid:\n")
         print_grid(player)
         print(Fore.WHITE + '-' * 35)
-        print(f"{Fore.MAGENTA + player_name}" + Fore.WHITE + " " + "after this attempt scores are:")
-        print(f"{Fore.MAGENTA + player_name}:" + Fore.YELLOW + " " + f"{player_score};" + " " + Fore.BLUE + "Computer:" + Fore.YELLOW + " " + f"{computer_score}")
+        print(f"{Fore.YELLOW + player_name}" + " " + Fore.WHITE + "after this attempt scores are:")
+        print(f"{Fore.YELLOW + player_name}:" + " " + Fore.WHITE + f"{player_score};" + " " + Fore.BLUE + "Computer:" + " " + Fore.WHITE + f"{computer_score}")
         print(Fore.WHITE + '-' * 35)
         i += 1
         if attempt_winner(player) == 5:
