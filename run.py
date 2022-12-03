@@ -3,7 +3,7 @@ import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
 
-# Welcome message to start the game
+# Welcome message to start the game.
 print(Fore.WHITE + '-' * 35)
 print(Fore.WHITE + "Welcome to play Battleships Game!")
 print("Grid size: 5 x 5")
@@ -15,15 +15,24 @@ print("Missed attempts: x")
 print("Hits: *")
 print(Fore.WHITE + '-' * 35)
 
-# global variables
+# Global variables
 player_score = 0
 computer_score = 0
 player_name = input(Fore.CYAN + "Please ENTER your name: \n" + Fore.YELLOW)
-print(Fore.WHITE + '-' * 35)
 
 player = []
 computer = []
 player_attempts = []
+
+# To ensure that player has entered his/her name to start the game.
+# while loop to check if the input data is valid.
+while True:
+    if not player_name.isalpha():
+        player_name = input(Fore.CYAN + "Please ENTER your name: \n" + Fore.YELLOW)
+    else:
+        break
+print(Fore.WHITE + "\nHello " + Fore.YELLOW + f"{player_name}! " + Fore.WHITE + "Welcome to play Battleships Game!")
+print(Fore.WHITE + '-' * 35)
 
 def make_grid(grid):
     """
@@ -63,7 +72,7 @@ def create_ship_location(grid):
         ship_col = random_number(grid)
         grid[ship_row][ship_col] = " @ "
         
-        # for total count of ship_point, look in each list of the grid, and count @
+        # For total count of ship_point, look in each list of the grid, and count @
         for row in grid:
             ship_point += row.count(" @ ")
 
@@ -109,7 +118,7 @@ def player_attempt():
     print_grid(player_attempts)
     repeat = True
     while repeat:
-        # To check if the input data is valid
+        # To check if the input data is valid.
         while True:
             print(Fore.GREEN + "\nChoose a row to hit the ship.")
             choose_row = input(Fore.GREEN + "Choose a number and press ENTER: \n" + Fore.WHITE)
@@ -148,10 +157,10 @@ def computer_attempt():
     Computer attempts at player's grid using randomly generated co-ordinates.
     """
     repeat = True
-    # To generate the random numbers
+    # To generate the random numbers.
     choose_row = random_number(computer)
     choose_col = random_number(computer)
-    # To check if the data is valid
+    # To check if the data is valid.
     while repeat:
         if (player[choose_row][choose_col] == " x " or 
                 player[choose_row][choose_col] == " * "):
@@ -159,7 +168,7 @@ def computer_attempt():
             choose_col = random_number(computer)
         else:
             repeat = False
-    # To show the player about the computer choice and result   
+    # To show the player about the computer choice and result. 
     print(Fore.BLUE + "\nComputer " + Fore.CYAN + "chose: " + Fore.WHITE + f"({choose_row + 1}, {choose_col + 1})")
     global computer_score
     if player[choose_row][choose_col] == " @ ":
