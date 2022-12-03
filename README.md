@@ -1,5 +1,5 @@
 # Battleships Game 
-The Battleships Game is based on the classic pen and paper game. This game is designed for one player to play against the computer with randomly generated battleship locations on a grid.
+The Battleships Game is based on the classic pen and paper game. This game is designed for one player to play against the computer with randomly generated battleship locations on a grid. The player can try to beat the computer by hitting more batteleships of the computer before the computer hits the player's batteleships.
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/different-screen-sizes.jpg" alt="Website on different screen sizes">
 </div>
@@ -15,11 +15,13 @@ ___
 - [Rules to play the game](#rules-to-play-the-game)
 - [Features](#features)
     - [Welcome message](#welcome-message)
+    - [Player name](#player-name)
     - [Player attempt](#player-attempt)
     - [Computer attempt](#computer-attempt)
     - [Attempt result and message](#attempt-result-and-message)
     - [Data validation](#data-validation)
     - [Final scores and message](#final-scores-and-message)
+    - [Continue play or quit game](#continue-play-or-quit-game)
 - [Technologies used](#technologies-used)
 - [Testing](#testing)
     - [Performance testing](#performance-testing)
@@ -66,25 +68,68 @@ ___
 
 ## Welcome message
 Welcome message will be displayed before the start of the game to indicate the player that he/she is going to play the Battleships Game with computer. The message will also indicate the grid size, how many battleships has to be found within the computer's grid, battleships will be auto generated, and the range of integers to be chosen.
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/welcome-message.jpg" alt="Welcome message">
+</div>
+
+## Player name
+The input of player's name will be asked in this section. Then player's name will be used throughout the game so that the player can personally enjoy the game.
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/player-name.jpg" alt="Player name">
+</div>
 
 ## Player attempt
-The player will attempt to hit the battleships on computer's grid by giving his/her input. The player has to enter a number for a row and a column (essentially, co-ordinates) to hit the battleship. If the suspected location is on a battleship, it is a hit and marked as "*". If the location is not on a battleship, it is a miss and marked as "x".
+The player will attempt to hit the battleships on computer's grid by giving his/her input. The player has to enter a number for a row and a column (essentially, co-ordinates) to hit the battleship. 
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/player-attempt.jpg" alt="Player attempt">
+</div>
+If the suspected location is on a battleship, it is a hit and marked as "*". If the location is not on a battleship, it is a miss and marked as "x".
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/attempt-message.jpg" alt="Attempt message">
+</div>
 
 ## Computer attempt
 The computer will attempt to hit the battleships on player's grid. The coordinates will be randomly generated to hit the battleship. If the suspected location is on a battleship, it is a hit and marked as "*". If the location is not on a battleship, it is a miss and marked as "x".
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/computer-attempt.jpg" alt="Computer attempt">
+</div>
 
 ## Attempt result and message
 After each attempt of the player and the computer the updated score and message will be displayed to indicate that it was a hit or a miss. 
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/attempt-result-message.jpg" alt="Attempt result & message">
+</div>
 
 ## Data validation
 An integer is expected between 1 and 5.
 * When an integer was entered outside of these bounds, the code displayed an error message, and a message to try again with the number between 1 and 5.
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/data-off-grid.jpg" alt="Data off-grid">
+</div>
 * When a letter was entered, the code displayed an error message, and a message to try again with an integer between 1 and 5.
-* When a key was pressed without entering a value, the code displayed an error message, and a message to try again with an integer between 1 and 5. 
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/data-letter.jpg" alt="Data letter">
+</div>
+* When a key was pressed without entering a value, the code displayed an error message, and a message to try again with an integer between 1 and 5.
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/data-no-input.jpg" alt="Data no input value">
+</div> 
 * When entering a row and column number to hit the ship, which were already chosen, the code displayed an error message, and a message to try again with another number.
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/data-same-coordinates.jpg" alt="Data same coordinates">
+</div>
 
 ## Final scores and message
 The player and the computer will have ten attempts to find all the 5 battleships. If all the 10 attempts are taken without hiting all the 5 battleships, the result will be displayed with the final score and the message to announce the winner or the game is draw.
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/final-scores-message.jpg" alt="Final scores & message">
+</div>
+
+## Continue play or quit game
+After the final scores and message, there will be a possiblity for a player to continue playing or quit the game.
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/continue-play-quit.jpg" alt="Continue play or quit">
+</div>
 
 [Back to Table of contents](#table-of-contents)
 
