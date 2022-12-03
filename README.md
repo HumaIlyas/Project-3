@@ -77,6 +77,10 @@ The input of player's name will be asked in this section. Then player's name wil
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/player-name.jpg" alt="Player name">
 </div>
+If the player will not enter the name, it will be asked again to enter the name to start the game.
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/player-name-validation.jpg" alt="Player name validation">
+</div>
 
 ## Player attempt
 The player will attempt to hit the battleships on computer's grid by giving his/her input. The player has to enter a number for a row and a column (essentially, co-ordinates) to hit the battleship. 
