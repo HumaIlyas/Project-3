@@ -31,7 +31,7 @@ while True:
         player_name = input(Fore.CYAN + "Please ENTER your name: \n" + Fore.YELLOW)
     else:
         break
-print(Fore.WHITE + "\nHello " + Fore.YELLOW + f"{player_name}! " + Fore.WHITE + "Welcome to play Battleships Game!")
+print(Fore.WHITE + "\nHello " + Fore.YELLOW + f"{player_name}! " + Fore.WHITE + "\nWelcome to play Battleships Game!")
 print(Fore.WHITE + '-' * 35)
 
 def make_grid(grid):
