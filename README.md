@@ -12,6 +12,7 @@ ___
     - [Website owner goal](#website-owner-goal)
     - [External user goal](#external-user-goal)
     - [Structure of the website](#structure-of-the-website)
+    - [Surface](#surface)
 - [Rules to play the game](#rules-to-play-the-game)
 - [Features](#features)
     - [Welcome message](#welcome-message)
@@ -50,6 +51,19 @@ The main goal of the application user is:
 * The design of the website is user-friendy as this is responsive on all type of devices: desktop, laptops, tablets, ipads, and mobiles.
 * On all the above mentioned devices players can have a fantastic experience. 
 * All parts of the website are designed to achieve maximum player satisfaction.
+
+[Back to Table of contents](#table-of-contents)
+
+## Surface
+
+### Colors
+Main colours used in the development of Battleships Game:
+* font color: #FFFFFF
+* background color: rgb(177, 225, 231); rgb(26, 130, 144); rgb(0, 0, 0)
+* border: rgb(9, 84, 94)
+
+### Fonts 
+* As a main font Arial and as a backup font sans-serif are used for the contents of the website.
 
 [Back to Table of contents](#table-of-contents)
 
@@ -139,8 +153,27 @@ After the final scores and message, there will be a possiblity for a player to c
 
 ___
 # Technologies used
-The main technology used to complete the contents of Battleships Game is:
-* Python
+Different technologies were used to complete the contents of Battleships Game:
+### GitHub
+* As a software hosting platform to keep project in a remote location.
+
+### Git
+* As a version-control system tracking.
+
+### Gitpod  
+* As a development hosting platform.
+
+### Heroku
+* Platform as a Service offering to carry out application deployment, scaling, and management.
+
+### HTML5
+* As a structure language.
+
+### CSS
+* As a style language.
+
+### Python
+*  As an interpreted, interactive, and object oriented scripting language.
 
 ___
 # Testing
@@ -159,7 +192,7 @@ The Battleships Game was tested for performance, code, and Compatibility.
 
 ## Code validation
 The Battleships Game is validated for a code using the python code validator.
-* No errors were found when passing through the official [PEP8 online validator](http://ww7.pep8online.com/)
+* No errors were found when passing through the official [PEP8 online validator](https://pypi.org/project/pep8/)
 
 ## Compatibility testing
 The Battleships Game was tested across multiple virtual mobile devices and browsers.
