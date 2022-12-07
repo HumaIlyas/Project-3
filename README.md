@@ -1,5 +1,5 @@
 # Battleships Game 
-The Battleships Game is based on the classic pen and paper game. This game is designed for one player to play against the computer with randomly generated battleship locations on a grid. The player can try to beat the computer by hitting more batteleships of the computer before the computer hits the player's batteleships.
+The Battleships Game is based on the classic pen and paper game. More information about this game can be found at [Battleships Game](https://en.wikipedia.org/wiki/Battleship_(game)). This version of the game is designed for one player to play against the computer with randomly generated battleship locations on a grid. The player can try to beat the computer by hitting more batteleships of the computer before the computer hits the player's batteleships.
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/different-screen-sizes.jpg" alt="Website on different screen sizes">
 </div>
@@ -8,12 +8,15 @@ The Battleships Game is based on the classic pen and paper game. This game is de
 
 ___
 # Table of contents
+- [Battleships Game](#battleships-game)
 - [UX](#ux)
     - [Website owner goal](#website-owner-goal)
     - [External user goal](#external-user-goal)
     - [Structure of the website](#structure-of-the-website)
+    - [Libraries used](#libraries-used)
     - [Surface](#surface)
 - [Rules to play the game](#rules-to-play-the-game)
+    - [Flowchart to plan Battleships Game logic](#flowchart-to-plan-battleships-game-logic)
 - [Features](#features)
     - [Welcome message](#welcome-message)
     - [Player name](#player-name)
@@ -52,13 +55,21 @@ The main goal of the application user is:
 * On all the above mentioned devices players can have a fantastic experience. 
 * All parts of the website are designed to achieve maximum player satisfaction.
 
-[Back to Table of contents](#table-of-contents)
+## Libraries used
+The use of external Python libraries was implemented where appropriate to provide the functionality that the Battleships Game requires. The rationale to use the particular libraries for the implementation of Battleships Game is documented below.
+
+### Random
+Random is a library that allows to generate random numbers. Randint is imported from random because the game requires to generate random numbers. For the computer's attempt the coordinates will be randomly generated to hit the battleship. 
+
+### Colorama 
+Colorama is a library that allows the color of text. Fore is imported from colorama to color the text to make the differentiation in color for the individaul parts of the game. For example, red color is given to the text of invalid statements.
 
 ## Surface
+Different colors and fonts were used in the design of Battleships Game.
 
 ### Colors
-Main colours used in the development of Battleships Game:
-* font color: #FFFFFF
+Main colours used in the design of Battleships Game:
+* font color: #FFFFFF; WHITE; YELLOW; CYAN; BLUE; GREEN; RED
 * background color: rgb(177, 225, 231); rgb(26, 130, 144); rgb(0, 0, 0)
 * border: rgb(9, 84, 94)
 
@@ -76,6 +87,14 @@ First the player has the attempt to hit the battleships on computer's grid. The 
 After that there will be the computer's attempt to hit the battleships on player's grid. The coordinates will be randomly generated to hit the battleship. If the suspected location is on a battleship, it is a hit and marked as "*". If the location is not on a battleship, it is a miss and marked as "x".
 
 The player and the computer will have ten attempts to find all the 5 battleships. If all the 10 attempts are taken without hiting all the 5 battleships, the result will be displayed with the final score and the message to announce the winner.
+
+## Flowchart to plan Battleships Game logic
+For the plan of Battleships Game logic, a flowchart was made, which is provided below. 
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <img src="assets/images/flowchart-to-plan-battleships-game-logic.jpg" alt="Flowchart to plan Battleships Game logic">
+</div>
+
+[Back to Table of contents](#table-of-contents)
 
 ___
 # Features
@@ -175,7 +194,9 @@ Different technologies were used to complete the contents of Battleships Game:
 ### Python
 *  As an interpreted, interactive, and object oriented scripting language.
 
-___
+[Back to Table of contents](#table-of-contents)
+
+__
 # Testing
 The Battleships Game was tested for performance, code, and Compatibility.
 ## Performance testing
@@ -192,7 +213,7 @@ The Battleships Game was tested for performance, code, and Compatibility.
 
 ## Code validation
 The Battleships Game is validated for a code using the python code validator.
-* No errors were found when passing through the official [PEP8 online validator](https://pypi.org/project/pep8/)
+* No errors were found when passing through the official [PEP8 online validator](http://pep8ci.herokuapp.com/#)
 
 ## Compatibility testing
 The Battleships Game was tested across multiple virtual mobile devices and browsers.
