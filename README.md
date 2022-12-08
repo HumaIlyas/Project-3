@@ -86,12 +86,12 @@ First the player has the attempt to hit the battleships on computer's grid. The 
 
 After that there will be the computer's attempt to hit the battleships on player's grid. The coordinates will be randomly generated to hit the battleship. If the suspected location is on a battleship, it is a hit and marked as "*". If the location is not on a battleship, it is a miss and marked as "x".
 
-The player and the computer will have ten attempts to find all the 5 battleships. If all the 10 attempts are taken without hiting all the 5 battleships, the result will be displayed with the final score and the message to announce the winner.
+The player and the computer will have ten attempts to find all the 5 battleships. If all the 10 attempts are taken with or without hiting all the 5 battleships, the result will be displayed with the final score and the message to announce the winner.
 
 ## Flowchart to plan Battleships Game logic
 For the plan of Battleships Game logic, a flowchart was made, which is provided below. 
 <div style="margin-top: 20px; margin-bottom: 20px;">
-    <img src="assets/images/flowchart-to-plan-battleships-game-logic.jpg" alt="Flowchart to plan Battleships Game logic">
+    <img src="assets/images/flowchart-plan-battleships-game-logic.jpg" alt="Flowchart to plan Battleships Game logic">
 </div>
 
 [Back to Table of contents](#table-of-contents)
