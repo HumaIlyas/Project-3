@@ -18,7 +18,7 @@ print(Fore.WHITE + '-' * 35)
 # Global variables
 player_score = 0
 computer_score = 0
-player_name = input(Fore.CYAN + "Please ENTER your name: \n" + Fore.YELLOW)
+player_name = input(Fore.CYAN + "Please enter your name: \n" + Fore.YELLOW)
 
 player = []
 computer = []
@@ -28,13 +28,13 @@ player_attempts = []
 # while loop to check if the input data is valid.
 while True:
     if not player_name.isalpha():
-        player_name = input(Fore.CYAN + "Please ENTER your name:\
+        player_name = input(Fore.CYAN + "Please enter your name:\
         \n" + Fore.YELLOW)
     else:
         break
 print(
     f"\n{Fore.WHITE + 'Hello'} " + Fore.YELLOW +
-    f"{player_name}!" + Fore.WHITE +
+    f"{player_name}! " + Fore.WHITE +
     f"\n{'Welcome to play Battleships Game!'} "
 )
 print(Fore.WHITE + '-' * 35)
@@ -70,8 +70,8 @@ def random_number(grid):
 def create_ship_location(grid):
     """
     Create locations for battleships by using random co-ordinates.
-    Update the grid with " @ " to indicate the location of the ships for the
-    player's attempt to hit them. There are 5 ships on the grid.
+    Update the grid with " @ " to indicate the location of the ships
+    for the player's attempt to hit them. There are 5 ships on the grid.
     while loop is to ensure that there are 5 ships on the grid.
     variable ship_point is to check if the points are less than 5,
     it loops again.
