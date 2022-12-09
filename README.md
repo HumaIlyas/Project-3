@@ -59,7 +59,7 @@ The main goal of the application user is:
 The use of external Python libraries was implemented where appropriate to provide the functionality that the Battleships Game requires. The rationale to use the particular libraries for the implementation of Battleships Game is documented below.
 
 ### Random
-Random is a library that allows to generate random numbers. Randint is imported from random because the game requires to generate random numbers. For the computer's attempt the coordinates will be randomly generated to hit the battleship. 
+Random is a library that allows to generate random numbers. Randint is imported from random because the game requires to generate random numbers. The locations for battleships were created by using random co-ordinates. For the computer's attempt the coordinates will be randomly generated to hit the battleship. 
 
 ### Colorama 
 Colorama is a library that allows the color of text. Fore is imported from colorama to color the text to make the differentiation in color for the individaul parts of the game. For example, red color is given to the text of invalid statements.
@@ -80,13 +80,13 @@ Main colours used in the design of Battleships Game:
 
 ___
 # Rules to play the game
-The player has to enter his/her name before randomly generating 5 ship locations on both player's grid and the computer's grid, these are signified with the letter "o".
+* The player has to enter his/her name before randomly generating 5 ship locations on both player's grid and the computer's grid, these are signified with the letter "o".
 
-First the player has the attempt to hit the battleships on computer's grid. The player has to enter a number for a row and a column (essentially, co-ordinates) to hit the battleship. If the suspected location is on a battleship, it is a hit and marked as "*". If the location is not on a battleship, it is a miss and marked as "x".
+* First the player has the attempt to hit the battleships on computer's grid. The player has to enter a number for a row and a column (essentially, co-ordinates) to hit the battleship. If the suspected location is on a battleship, it is a hit and marked as ' * '. If the location is not on a battleship, it is a miss and marked as ' x '.
 
-After that there will be the computer's attempt to hit the battleships on player's grid. The coordinates will be randomly generated to hit the battleship. If the suspected location is on a battleship, it is a hit and marked as "*". If the location is not on a battleship, it is a miss and marked as "x".
+* After that there will be the computer's attempt to hit the battleships on player's grid. The coordinates will be randomly generated to hit the battleship. If the suspected location is on a battleship, it is a hit and marked as ' * '. If the location is not on a battleship, it is a miss and marked as ' x '.
 
-The player and the computer will have ten attempts to find all the 5 battleships. If all the 10 attempts are taken with or without hiting all the 5 battleships, the result will be displayed with the final score and the message to announce the winner.
+* The player and the computer will have ten attempts to find all the 5 battleships. If all the 10 attempts are taken with or without hiting all the 5 battleships, the result will be displayed with the final score and the message to announce the winner.
 
 ## Flowchart to plan Battleships Game logic
 For the plan of Battleships Game logic, a flowchart was made, which is provided below. 
@@ -106,33 +106,36 @@ Welcome message will be displayed before the start of the game to indicate the p
 </div>
 
 ## Player name
-The input of player's name will be asked in this section. Then player's name will be used throughout the game so that the player can personally enjoy the game.
+* The input of player's name will be asked in this section. Then player's name will be used throughout the game so that the player can personally enjoy the game.
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/player-name.jpg" alt="Player name">
 </div>
-If the player will not enter the name, it will be asked again to enter the name to start the game.
+
+* If the player will not enter the name, it will be asked again to enter the name to start the game.
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/player-name-validation.jpg" alt="Player name validation">
 </div>
 
 ## Player attempt
-The player will attempt to hit the battleships on computer's grid by giving his/her input. The player has to enter a number for a row and a column (essentially, co-ordinates) to hit the battleship. 
+* The player will attempt to hit the battleships on computer's grid by giving his/her input. The player has to enter a number for a row and a column (essentially, co-ordinates) to hit the battleship. 
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/player-attempt.jpg" alt="Player attempt">
 </div>
-If the suspected location is on a battleship, it is a hit and marked as "*". If the location is not on a battleship, it is a miss and marked as "x".
+
+* If the suspected location is on a battleship, it is a hit and marked as ' * '. If the location is not on a battleship, it is a miss and marked as ' x '.
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/attempt-message.jpg" alt="Attempt message">
 </div>
 
 ## Computer attempt
-The computer will attempt to hit the battleships on player's grid. The coordinates will be randomly generated to hit the battleship. If the suspected location is on a battleship, it is a hit and marked as "*". If the location is not on a battleship, it is a miss and marked as "x".
+The computer will attempt to hit the battleships on player's grid. The coordinates will be randomly generated to hit the battleship. If the suspected location is on a battleship, it is a hit and marked as 
+' * '. If the location is not on a battleship, it is a miss and marked as ' x '.
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/computer-attempt.jpg" alt="Computer attempt">
 </div>
 
 ## Attempt result and message
-After each attempt of the player and the computer the updated score and message will be displayed to indicate that it was a hit or a miss. 
+After each attempt of the player and computer the updated score and message will be displayed to indicate that it was a hit or a miss. 
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/attempt-result-message.jpg" alt="Attempt result & message">
 </div>
@@ -143,21 +146,24 @@ An integer is expected between 1 and 5.
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/data-off-grid.jpg" alt="Data off-grid">
 </div>
+
 * When a letter was entered, the code displayed an error message, and a message to try again with an integer between 1 and 5.
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/data-letter.jpg" alt="Data letter">
 </div>
+
 * When a key was pressed without entering a value, the code displayed an error message, and a message to try again with an integer between 1 and 5.
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/data-no-input.jpg" alt="Data no input value">
 </div> 
+
 * When entering a row and column number to hit the ship, which were already chosen, the code displayed an error message, and a message to try again with another number.
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/data-same-coordinates.jpg" alt="Data same coordinates">
 </div>
 
 ## Final scores and message
-The player and the computer will have ten attempts to find all the 5 battleships. If all the 10 attempts are taken without hiting all the 5 battleships, the result will be displayed with the final score and the message to announce the winner or the game is draw.
+The player and computer will have ten attempts to find all the 5 battleships. If all the 10 attempts are taken with or without hiting all the 5 battleships, the result will be displayed with the final score and the message to announce the winner or the game is draw.
 <div style="margin-top: 20px; margin-bottom: 20px;">
     <img src="assets/images/final-scores-message.jpg" alt="Final scores & message">
 </div>
@@ -209,7 +215,7 @@ The Battleships Game was tested for performance, code, and Compatibility.
 * When entering a row and column number to hit the ship, the co-ordinates were correct on the grid. 
 * When entering a row and column number to hit the ship, which were already chosen, the code displayed an error message, and a message to try again with another number.
 * The maximum number of attempts before the game was over were ten.
-* When the player pressed enter to quit the game, the code was working properly and the game was stopped.
+* When the player pressed ENTER to quit the game, the code was working properly and the game was stopped.
 
 ## Code validation
 The Battleships Game is validated for a code using the python code validator.
@@ -221,7 +227,7 @@ The Battleships Game was tested across multiple virtual mobile devices and brows
 ## Issues found during site development
 There were a few issues found during the design of Battleships Game.
 * The use of linebreakes was corrected several times.
-* Where to add the statement for the player that it is player's attempt.
+* Where to add the statement for the player that it is player's attempt, so that this statement should not display after ten attempts.
 
 ## Unfixed bugs
 * No unfixed bugs 
@@ -247,7 +253,7 @@ ___
 To complete the contents of Battleships Game, I learned coding and collected the information from different sources.
 * Learned Python coding from [Code Institute](https://learn.codeinstitute.net/)
 * Used Code Institute student template [python-essentials-template](https://github.com/Code-Institute-Org/python-essentials-template)
-* The details about the battleships game were found at [Wikipedia](https://en.wikipedia.org/wiki/Battleship_(game)) 
+* The details about the battleships game were found at [Battleships Game](https://en.wikipedia.org/wiki/Battleship_(game))
 * The description on the battleships game provided by the tutor of the Code Institute with [Ultimate Battleships](https://p3-battleships.herokuapp.com/) was useful as well as an inspiration to design Battleships Game.
 * I acknowledge [Adegbenga Adeye](https://www.linkedin.com/in/adegbenga-adeye-psm-i-14003635/) for mentor support and finishing touches.
 
